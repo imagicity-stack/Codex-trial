@@ -1,0 +1,136 @@
+
+.hero-slider {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.75rem);
+  color: #fff4dc;
+}
+
+.hero-slider__tagline {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  color: rgba(255, 230, 140, 0.72);
+}
+
+.hero-slider__heading {
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1.08;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  color: #fff9f3;
+}
+
+.hero-slider__heading-base {
+  font-weight: 600;
+  color: rgba(255, 224, 130, 0.82);
+}
+
+.hero-slider__carousel {
+  display: inline-flex;
+  overflow: hidden;
+  height: 1.1em;
+  position: relative;
+  padding-left: 0.15em;
+}
+
+.hero-slider__words {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  animation: heroSliderRoll 12s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+}
+
+.hero-slider__word {
+  text-transform: capitalize;
+  background: linear-gradient(120deg, #ff2952 0%, #ffb700 70%, #ffe666 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  text-shadow: 0 14px 36px rgba(255, 41, 82, 0.35);
+}
+
+.hero-slider__description {
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  line-height: 1.7;
+  max-width: 48ch;
+  color: rgba(255, 237, 200, 0.82);
+}
+
+.hero-slider__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-slider__primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, #ff2d55 0%, #ffb700 100%);
+  color: #2a0303;
+  font-weight: 700;
+  padding: 0.95rem 2.6rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.12rem;
+  box-shadow: 0 20px 48px rgba(255, 45, 85, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.hero-slider__primary:hover,
+.hero-slider__primary:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 66px rgba(255, 183, 0, 0.38);
+}
+
+@keyframes heroSliderRoll {
+  0%,
+  16% {
+    transform: translateY(0%);
+  }
+  20%,
+  36% {
+    transform: translateY(-100%);
+  }
+  40%,
+  56% {
+    transform: translateY(-200%);
+  }
+  60%,
+  76% {
+    transform: translateY(-300%);
+  }
+  80%,
+  96% {
+    transform: translateY(-400%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-slider__heading {
+    gap: 0.6rem;
+  }
+
+  .hero-slider__tagline {
+    letter-spacing: 0.28rem;
+  }
+
+  .hero-slider__actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-slider__primary {
+    width: 100%;
+    justify-content: center;
+  }
+}
