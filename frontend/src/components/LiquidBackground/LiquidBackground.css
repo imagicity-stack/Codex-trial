@@ -1,0 +1,112 @@
+.liquid-background {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  background: radial-gradient(circle at 10% 15%, rgba(255, 95, 109, 0.18), transparent 55%),
+    radial-gradient(circle at 80% 12%, rgba(46, 242, 255, 0.16), transparent 50%),
+    radial-gradient(circle at 50% 85%, rgba(255, 205, 111, 0.14), transparent 55%),
+    linear-gradient(120deg, #020202 0%, #0b0b0f 45%, #040404 100%);
+}
+
+.liquid-background__blob {
+  position: absolute;
+  width: clamp(32rem, 48vw, 60rem);
+  height: clamp(32rem, 48vw, 60rem);
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.55;
+  mix-blend-mode: screen;
+}
+
+.liquid-background__blob--one {
+  background: radial-gradient(circle at 30% 30%, rgba(255, 95, 109, 0.8), rgba(140, 0, 38, 0.2));
+  top: -18rem;
+  left: -12rem;
+  animation: floatOne 18s ease-in-out infinite;
+}
+
+.liquid-background__blob--two {
+  background: radial-gradient(circle at 70% 40%, rgba(46, 242, 255, 0.55), rgba(0, 166, 255, 0.18));
+  bottom: -22rem;
+  right: -14rem;
+  animation: floatTwo 20s ease-in-out infinite;
+}
+
+.liquid-background__blob--three {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 205, 111, 0.4), rgba(255, 95, 109, 0.18));
+  top: 12%;
+  right: 28%;
+  animation: floatThree 24s ease-in-out infinite;
+}
+
+.liquid-background__cursor {
+  position: absolute;
+  width: 22rem;
+  height: 22rem;
+  pointer-events: none;
+  border-radius: 50%;
+  left: var(--cursor-x, 50vw);
+  top: var(--cursor-y, 50vh);
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(46, 242, 255, 0.45) 0%, rgba(46, 242, 255, 0.08) 50%, rgba(5, 5, 5, 0) 75%);
+  filter: blur(22px);
+  mix-blend-mode: screen;
+  transition: transform 0.15s ease-out;
+}
+
+.liquid-background__grain {
+  position: absolute;
+  inset: -200%;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"%3E%3Cfilter id="n"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23n)" opacity="0.08"/%3E%3C/svg%3E');
+  animation: grainShift 12s steps(10) infinite;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+@keyframes floatOne {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.05);
+  }
+  50% {
+    transform: translate3d(4rem, 3rem, 0) scale(1.1);
+  }
+}
+
+@keyframes floatTwo {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(0.95);
+  }
+  50% {
+    transform: translate3d(-3rem, -2rem, 0) scale(1.05);
+  }
+}
+
+@keyframes floatThree {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-2rem, 3rem, 0) scale(1.08);
+  }
+}
+
+@keyframes grainShift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(25%, 25%, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .liquid-background__cursor {
+    width: 14rem;
+    height: 14rem;
+    filter: blur(18px);
+  }
+}
