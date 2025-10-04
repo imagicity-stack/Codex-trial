@@ -4,7 +4,6 @@ import GooeyNav from './components/GooeyNav/GooeyNav.jsx';
 import GradualBlur from './components/GradualBlur/GradualBlur.jsx';
 import FlowingMenu from './components/FlowingMenu/FlowingMenu.jsx';
 import SidebarMenu from './components/SidebarMenu/SidebarMenu.jsx';
-import HeroSlider from './components/HeroSlider/HeroSlider.jsx';
 import MotionShowcase from './components/MotionShowcase/MotionShowcase.jsx';
 import ImpactTicker from './components/ImpactTicker/ImpactTicker.jsx';
 import ProjectSpotlight from './components/ProjectSpotlight/ProjectSpotlight.jsx';
@@ -161,7 +160,6 @@ function App() {
             <p className="app__subtext">From concept to conversion, we launch immersive brand universes that convert attention into momentum.</p>
           </div>
         </header>
-        <HeroSlider />
         <ImpactTicker />
         <MotionShowcase />
         <ProjectSpotlight />
