@@ -7,7 +7,8 @@ const HeroSlider = () => {
   const animatedPhrases = useMemo(() => [...phrases, phrases[0]], []);
 
   return (
-    <section className="hero-slider">
+    <section className="hero-slider" id="home">
+      <span className="hero-slider__pulse" aria-hidden="true" />
       <p className="hero-slider__tagline">Full-funnel marketing studio</p>
       <h1 className="hero-slider__heading">
         <span className="hero-slider__heading-base">We help brands in</span>
@@ -27,11 +28,8 @@ const HeroSlider = () => {
       </p>
       <div className="hero-slider__actions">
         <a className="hero-slider__primary" href="#start">Start a project</a>
-        <a className="hero-slider__secondary" href="#cases">
-          View case studies
-          <span aria-hidden="true">↗</span>
-        </a>
       </div>
+      <span className="hero-slider__beam" aria-hidden="true" />
     </section>
   );
 };
