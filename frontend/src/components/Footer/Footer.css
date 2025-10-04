@@ -8,6 +8,10 @@
   box-shadow:
     0 30px 70px rgba(42, 0, 0, 0.16),
     inset 0 0 0 1px rgba(255, 215, 150, 0.25);
+  padding: clamp(2rem, 5vw, 3.2rem);
+  border-radius: 28px;
+  background: rgba(16, 16, 18, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer__grid {
@@ -20,6 +24,7 @@
   display: grid;
   gap: 0.75rem;
   color: rgba(90, 30, 0, 0.78);
+  color: rgba(225, 225, 225, 0.78);
 }
 
 .footer__column--brand {
@@ -31,12 +36,14 @@
   font-size: 0.72rem;
   letter-spacing: 0.4rem;
   color: rgba(120, 45, 0, 0.6);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .footer__headline {
   font-size: clamp(1.4rem, 3vw, 1.9rem);
   line-height: 1.4;
   color: #2a0c00;
+  color: rgba(245, 245, 245, 0.9);
 }
 
 .footer__cta {
@@ -52,12 +59,18 @@
   color: #2a0c00;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 18px 46px rgba(255, 95, 109, 0.28);
+  padding: 0.85rem 1.7rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff5f6d 0%, #ffc371 55%, #2ef2ff 100%);
+  color: #050505;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .footer__cta:hover,
 .footer__cta:focus-visible {
   transform: translateY(-3px);
   box-shadow: 0 18px 46px rgba(255, 205, 111, 0.35);
+  box-shadow: 0 18px 46px rgba(46, 242, 255, 0.32);
 }
 
 .footer__label {
@@ -65,6 +78,7 @@
   letter-spacing: 0.28rem;
   text-transform: uppercase;
   color: rgba(120, 45, 0, 0.65);
+  color: rgba(255, 255, 255, 0.52);
 }
 
 .footer__list {
@@ -76,12 +90,14 @@
 
 .footer__list--links a {
   color: rgba(90, 30, 0, 0.7);
+  color: rgba(230, 230, 230, 0.78);
   transition: color 0.3s ease;
 }
 
 .footer__list--links a:hover,
 .footer__list--links a:focus-visible {
   color: rgba(120, 45, 0, 0.95);
+  color: rgba(255, 255, 255, 0.96);
 }
 
 .footer__base {
@@ -95,6 +111,12 @@
   letter-spacing: 0.18rem;
   text-transform: uppercase;
   color: rgba(120, 45, 0, 0.6);
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.8rem;
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  color: rgba(200, 200, 200, 0.58);
 }
 
 .footer__nav {
@@ -111,6 +133,7 @@
 .footer__nav a:hover,
 .footer__nav a:focus-visible {
   color: rgba(90, 30, 0, 0.92);
+  color: rgba(255, 255, 255, 0.95);
 }
 
 @media (max-width: 640px) {
