@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './SidebarMenu.css';
 
-const menuItems = ['Home', 'About Us', 'Services', 'Projects', 'Blogs', 'Contact Us'];
+const menuItems = ['Home', 'Services', 'Case Studies', 'About', 'Contact'];
 
 const SidebarMenu = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -27,6 +27,10 @@ const HeroSlider = () => {
       </p>
       <div className="hero-slider__actions">
         <a className="hero-slider__primary" href="#start">Start a project</a>
+        <a className="hero-slider__secondary" href="#cases">
+          View case studies
+          <span aria-hidden="true">↗</span>
+        </a>
       </div>
     </section>
   );

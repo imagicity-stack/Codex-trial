@@ -1,32 +1,31 @@
-
 .hero-slider {
   position: relative;
   z-index: 2;
   display: grid;
   gap: clamp(1.5rem, 3vw, 2.75rem);
-  color: #fff4dc;
+  color: #ffeaca;
 }
 
 .hero-slider__tagline {
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.4rem;
-  color: rgba(255, 230, 140, 0.72);
+  color: rgba(255, 226, 146, 0.75);
 }
 
 .hero-slider__heading {
-  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-size: clamp(2.5rem, 6vw, 4.8rem);
   font-weight: 700;
-  line-height: 1.08;
+  line-height: 1.1;
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
-  color: #fff9f3;
+  color: #fff8e1;
 }
 
 .hero-slider__heading-base {
   font-weight: 600;
-  color: rgba(255, 224, 130, 0.82);
+  color: rgba(255, 226, 146, 0.85);
 }
 
 .hero-slider__carousel {
@@ -46,18 +45,18 @@
 
 .hero-slider__word {
   text-transform: capitalize;
-  background: linear-gradient(120deg, #ff2952 0%, #ffb700 70%, #ffe666 100%);
+  background: linear-gradient(120deg, #ff6b6b 0%, #ffd166 60%, #ffe27a 100%);
   -webkit-background-clip: text;
   color: transparent;
   font-weight: 700;
-  text-shadow: 0 14px 36px rgba(255, 41, 82, 0.35);
+  text-shadow: 0 12px 30px rgba(255, 94, 91, 0.25);
 }
 
 .hero-slider__description {
   font-size: clamp(1rem, 2.2vw, 1.25rem);
   line-height: 1.7;
-  max-width: 48ch;
-  color: rgba(255, 237, 200, 0.82);
+  max-width: 46ch;
+  color: rgba(255, 245, 224, 0.8);
 }
 
 .hero-slider__actions {
@@ -71,22 +70,64 @@
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  background: linear-gradient(135deg, #ff2d55 0%, #ffb700 100%);
-  color: #2a0303;
+  background: linear-gradient(135deg, #ff5e5b 0%, #ffd166 100%);
+  color: #200202;
   font-weight: 700;
-  padding: 0.95rem 2.6rem;
+  padding: 0.95rem 2.4rem;
   border-radius: 999px;
   text-transform: uppercase;
   letter-spacing: 0.12rem;
-  box-shadow: 0 20px 48px rgba(255, 45, 85, 0.4);
+  box-shadow: 0 18px 45px rgba(255, 94, 91, 0.35);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 
 .hero-slider__primary:hover,
 .hero-slider__primary:focus-visible {
   transform: translateY(-3px);
-  box-shadow: 0 24px 66px rgba(255, 183, 0, 0.38);
+  box-shadow: 0 22px 60px rgba(255, 204, 0, 0.35);
+}
+
+.hero-slider__secondary {
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  color: rgba(255, 226, 158, 0.85);
+  padding-bottom: 0.2rem;
+  transition: color 0.3s ease;
+}
+
+.hero-slider__secondary span {
+  margin-left: 0.4rem;
+  transition: transform 0.3s ease;
+}
+
+.hero-slider__secondary::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(135deg, #ff5e5b 0%, #ffd166 100%);
+  transform-origin: left;
+  transform: scaleX(0.4);
+  transition: transform 0.3s ease;
+}
+
+.hero-slider__secondary:hover,
+.hero-slider__secondary:focus-visible {
+  color: #ffe27a;
+}
+
+.hero-slider__secondary:hover span,
+.hero-slider__secondary:focus-visible span {
+  transform: translate(4px, -4px);
+}
+
+.hero-slider__secondary:hover::after,
+.hero-slider__secondary:focus-visible::after {
+  transform: scaleX(1);
 }
 
 @keyframes heroSliderRoll {
