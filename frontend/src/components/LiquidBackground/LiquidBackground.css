@@ -1,0 +1,112 @@
+.liquid-background {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  background: radial-gradient(circle at 15% 25%, rgba(255, 239, 99, 0.3), transparent 55%),
+    radial-gradient(circle at 80% 20%, rgba(255, 87, 51, 0.28), transparent 50%),
+    radial-gradient(circle at 50% 80%, rgba(255, 87, 51, 0.25), transparent 55%),
+    #120505;
+}
+
+.liquid-background__blob {
+  position: absolute;
+  width: clamp(35rem, 45vw, 55rem);
+  height: clamp(35rem, 45vw, 55rem);
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.6;
+  mix-blend-mode: screen;
+}
+
+.liquid-background__blob--one {
+  background: radial-gradient(circle at 30% 30%, rgba(255, 74, 74, 0.9), rgba(215, 0, 64, 0.3));
+  top: -15rem;
+  left: -10rem;
+  animation: floatOne 16s ease-in-out infinite;
+}
+
+.liquid-background__blob--two {
+  background: radial-gradient(circle at 70% 40%, rgba(255, 199, 0, 0.85), rgba(255, 87, 51, 0.25));
+  bottom: -20rem;
+  right: -15rem;
+  animation: floatTwo 18s ease-in-out infinite;
+}
+
+.liquid-background__blob--three {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 119, 0, 0.7), rgba(255, 0, 0, 0.2));
+  top: 15%;
+  right: 25%;
+  animation: floatThree 22s ease-in-out infinite;
+}
+
+.liquid-background__cursor {
+  position: absolute;
+  width: 24rem;
+  height: 24rem;
+  pointer-events: none;
+  border-radius: 50%;
+  left: var(--cursor-x, 50vw);
+  top: var(--cursor-y, 50vh);
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(255, 221, 89, 0.45) 0%, rgba(255, 87, 51, 0.2) 50%, rgba(18, 5, 5, 0) 70%);
+  filter: blur(25px);
+  mix-blend-mode: screen;
+  transition: transform 0.15s ease-out;
+}
+
+.liquid-background__grain {
+  position: absolute;
+  inset: -200%;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"%3E%3Cfilter id="n"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23n)" opacity="0.09"/%3E%3C/svg%3E');
+  animation: grainShift 12s steps(10) infinite;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+@keyframes floatOne {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.05);
+  }
+  50% {
+    transform: translate3d(4rem, 3rem, 0) scale(1.1);
+  }
+}
+
+@keyframes floatTwo {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(0.95);
+  }
+  50% {
+    transform: translate3d(-3rem, -2rem, 0) scale(1.05);
+  }
+}
+
+@keyframes floatThree {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-2rem, 3rem, 0) scale(1.08);
+  }
+}
+
+@keyframes grainShift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(25%, 25%, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .liquid-background__cursor {
+    width: 16rem;
+    height: 16rem;
+    filter: blur(18px);
+  }
+}
